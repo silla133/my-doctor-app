@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Doctor</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+
+    direction: ltr;       /* الكتابة من اليسار لليمين */
+    text-align: left;     /* كل النصوص تبدأ من اليسار */
+}
+
+/* الهيدر */
+.header {
+    padding: 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between; /* الاسم على اليسار والبحث على اليمين */
+    align-items: center;
+    #welcome {
+    font-size: 28px;      /* حجم أكبر */
+    font-weight: bold;     /* غامق */
+    color: #333;           /* لون واضح */
+}
+}
+
+.search-bar {
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+}
+
+/* البطاقة الزرقاء */
+.blue-card {
+    background: #83a2c0;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+    /* إضافة حركة انتقالية */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blue-card:hover {
+    transform: translateY(-5px) scale(1.02); /* تتحرك للأعلى وتكبر قليلًا */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+.blue-card img {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    height: 120px;
+}
+
+/* النص */
+.blue-text {
+    width: 60%;
+}
+
+
+
+/* عنوان */
+.center-title {
+    text-align: left;      /* النص على اليسار */
+    margin-top: 10px;
+    margin-left: 15px;     /* المسافة من الحافة */
+    font-weight: bold;      /* غامق */
+    font-size: 28px;        /* حجم أكبر */
+    color: #333;            /* لون واضح */
+}
+
+/* التخصصات */
+.specialties {
+    display: flex;           /* يحافظ على الترتيب الأفقي */
+    overflow-x: auto;        /* تمرير أفقي إذا زاد المحتوى */
+    padding: 0;
+    margin: 0;
+    gap: 4px;                /* المسافة بين الدوائر */
+}
+
+.specialties a {
+    text-decoration: none;  /* إزالة التسطير */
+    color: inherit;          /* استخدم لون النص الأصلي */
+}
+
+
+.spec {
+    flex: 0 0 auto;
+    text-align: center;
+    margin: 0;
+}
+
+.spec img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    transition: transform 0.3s; /* حركة سلسة */
+}
+
+.spec img:hover {
+    transform: scale(1.1) rotate(5deg); /* تكبير و تدوير خفيف عند المرور */
+}
+/* بطاقة الأطباء */
+.doctors-card {
+    background: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 20px;
+
+    /* ظل خفيف */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* الحاوية الرئيسية لكل طبيب */
+.doctor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    background: #f8f8f8;
+    padding: 10px 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+    /* حركة انتقالية */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor:hover {
+    transform: translateY(-5px) scale(1.01); /* تتحرك للأعلى وتكبر قليلًا */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* صورة الطبيب */
+.doctor img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px; /* مسافة بين الصورة والمعلومات */
+}
+
+/* معلومات الطبيب (اسم + توقيت) */
+.doctor-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* لتأخذ كل المساحة الممكنة بين الصورة وOuvrir */
+}
+
+/* اسم الطبيب */
+.doctor-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+/* توقيت العمل */
+.doctor-time {
+    font-size: 14px;
+    color: #777;
+}
+
+/* بطاقة Ouvrir */
+.doctor-action {
+    padding: 5px 12px;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.ouvrir.green {
+    background-color: #3d87a6; /* أخضر */
+}
+
+.ouvrir.red {
+    background-color: #3d87a6; /* أحمر */
+}
+
+.doctor img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* الشريط السفلي */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <span id="welcome">Hi</span>
+    <input type="text" placeholder="Search doctor..." class="search-bar">
+</div>
+
+<!-- البطاقة الزرقاء -->
+<div class="blue-card">
+    <div class="blue-text">
+        <h3>Looking for desired doctor?</h3>
+    </div>
+    <img src="doctor.png" alt="Doctor">
+</div>
+
+<div class="center-title">Find your doctor</div>
+
+<!-- التخصصات -->
+<div class="specialties">
+    
+    <a href="OPHTA.html?name=ophta" class="spec">
+        <img src="OPHTA.png" alt="OPHTA">
+        <div>OPHTA</div>
+     </a>
+
+
+<a href="specialty.html?type=gyneco" class="spec">
+    <img src="GYNECOLOGUE.png" alt="GYNECOLOGUE">
+    <div>GYNECOLOGUE</div>
+</a>
+
+<a href="specialty.html?type=dent" class="spec">
+    <img src="DENTISTE.png" alt="DENTISTE">
+    <div>DENTISTE</div>
+</a>
+
+<a href="specialty.html?type=ortho" class="spec">
+    <img src="ORTHO.png" alt="ORTHO">
+    <div>ORTHO</div>
+</a>
+
+<a href="specialty.html?type=orl" class="spec">
+    <img src="ORL.png" alt="ORL">
+    <div>ORL</div>
+</a>
+
+<a href="specialty.html?type=pneumo" class="spec">
+    <img src="PNEUMOLOGUE.png" alt="PNEUMOLOGUE">
+    <div>PNEUMOLOGUE</div>
+</a>
+ </div>   
+
+
+<!-- بطاقة الأطباء -->
+<div class="doctors-card">
+    <h3>Top Doctors</h3>
+
+    <div class="doctor">
+         <img src="doc1.png" alt="Dr Ahmed"> <!-- صورة الطبيب -->
+        <div class="doctor-info">
+            <div class="doctor-name">Dr Ahmed</div>
+            <div class="doctor-time">9:00 - 17:00</div>
+        </div>
+        <div class="doctor-action ouvrir green">Ouvrir</div>
+    </div>
+
+    <div class="doctor">
+         <img src="doc2.png" alt="Dr Ahmed"> <!-- صورة الطبيب -->
+        <div class="doctor-info">
+            <div class="doctor-name">Dr Sara</div>
+            <div class="doctor-time">10:00 - 16:00</div>
+        </div>
+        <div class="doctor-action ouvrir red">Ouvrir</div>
+    </div>
+
+    <div class="doctor">
+         <img src="doc3.png" alt="Dr Ahmed"> <!-- صورة الطبيب -->
+        <div class="doctor-info">
+            <div class="doctor-name">Dr Ali</div>
+            <div class="doctor-time">8:00 - 14:00</div>
+        </div>
+        <div class="doctor-action ouvrir green">Ouvrir</div>
+    </div>
+
+</div>
+
+<!-- الشريط السفلي -->
+<div class="bottom-nav">
+    <div>🏠</div>
+    <div>💬</div>
+    <div>⚙️</div>
+    <div>👤</div>
+</div>
+
+<script>
+  // جلب البريد الإلكتروني من الرابط
+  const params = new URLSearchParams(window.location.search);
+  const email = params.get("name"); // البريد الإلكتروني المرسل من login.html
+
+  // استخراج أول خمس أحرف
+  let shortName = "";
+  if(email){
+      shortName = email.substring(0, 5); // أول 5 أحرف
+      const welcomeEl = document.getElementById("welcome");
+      if(welcomeEl){
+          welcomeEl.innerText = "Hi " + shortName;
+      }
+  }
+</script>
+<script>
+function openSpecialty(specialty) {
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name") || '';
+    window.location.href = specialty + ".html?name=" + name;
+}
+</script>
+</body>
+</html>

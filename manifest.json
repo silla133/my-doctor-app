@@ -1,0 +1,25 @@
+{
+  "name": "My Doctor",
+  "short_name": "DoctorApp",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#2e69c2",
+  "theme_color": "#2e69c2",
+  "icons": [
+    {
+      "src": "logo-324.png",
+      "sizes": "324x324",
+      "type": "image/png"
+    },
+    {
+      "src": "logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "logo-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}

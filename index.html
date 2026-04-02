@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Doctor</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #2e69c2, #719ad7 40%, #bbceea 60%, #3d75ca 100%);
+            touch-action: none;
+        }
+
+        .splash-container {
+            text-align: center;
+            position: relative;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .heart-wrapper {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: hsl(0, 0%, 100%);
+            transform: rotate(-45deg);
+            box-shadow: 0 30px 25px rgba(102, 151, 204, 0.5);
+            z-index: 1;
+            margin-top: 50px;
+        }
+
+        .heart::before, .heart::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgb(255, 255, 255);
+            border-radius: 50%;
+        }
+        .heart::before { top: -50px; left: 0; }
+        .heart::after { left: 50px; top: 0; }
+
+        .plus {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 55px;
+            height: 51px;
+            transform: translate(-50%, -40%);
+            z-index: 80;
+            filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.1)); 
+        }
+
+        .plus::before,
+        .plus::after {
+            content: "";
+            position: absolute;
+            background: rgb(110, 145, 188);
+            border-radius: 4px;
+        }
+
+        .plus::before {
+            width: 21px;
+            height: 130%;
+            left: 50%;
+            top: -15%;
+            transform: translateX(-50%);
+        }
+
+        .plus::after {
+            width: 130%;
+            height: 21px;
+            top: 50%;
+            left: -15%;
+            transform: translateY(-50%);
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 38px;
+            letter-spacing: 5px;
+            margin-top: 15px;
+            text-shadow: 5px 2px 6px rgba(0,0,0,0.2,0.5);
+            font-weight: bold;
+        }
+
+        .subtitle {
+            color: #ffffff;
+            font-size: 20px;
+            margin-top: 3px;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            font-weight: 50;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0); }
+            to { opacity: 1; transform: scale(1); }
+        }
+   
+   
+   </style>
+
+
+<link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="logo-1024.png" />
+</head>
+
+<body>
+
+<div class="splash-container">
+        <div class="heart-wrapper">
+            <div class="heart"></div>
+            <div class="plus"></div>
+        </div>
+        <h1>MY DOCTOR</h1>
+        <p class="subtitle">"Find your doctors"</p>
+        <p class="subtitle">Your Health, Our Priority</p>
+    </div>
+
+
+<style>
+.subtitle {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 2px 0; /* يقلل المسافة بين الفقرات */
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-weight: 500;
+}
+</style>
+
+<script>
+    // عند الضغط على أي مكان، الانتقال للصفحة الرئيسية
+    document.body.addEventListener("click", function () {
+        window.location.href = "login.html";
+    });
+
+    // جلب البريد الإلكتروني من الرابط
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("name"); // البريد الإلكتروني المرسل من login.html
+
+    // استخراج أول أربعة أحرف
+    let shortName = "";
+    if(email){
+        shortName = email.substring(0, 4);
+        // إذا أردت عرض الاسم هنا في الـ splash (مثال)
+        console.log("Hi " + shortName);
+    }
+</script>
+
+</body>
+</html>

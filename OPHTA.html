@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPHTA - My Doctor</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    text-align: left;
+}
+
+/* الهيدر */
+.header {
+    padding: 37px;
+    font-size: 37px;
+    font-weight: bold;
+    color: #031022;
+}
+
+/* قائمة الأطباء */
+.doctors-list {
+    margin: 15px;
+}
+
+/* بطاقة الطبيب */
+.doctor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.doctor img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.doctor-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.doctor-time {
+    font-size: 14px;
+    color: #777;
+}
+
+.doctor-action {
+    padding: 5px 12px;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #3d87a6; /* أخضر */
+}
+.doctor-phone a {
+    text-decoration: none;
+    color: #1d8713;
+}
+/* شريط البحث */
+.search-bar {
+    margin: 10px 15px;
+    display: flex;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+
+<div class="header" id="welcome">OPHTALMOLOGUE</div>
+
+<!-- شريط البحث -->
+<div class="search-bar">
+    <input type="text" placeholder="Search for doctor...">
+</div>
+
+<div class="doctors-list">
+
+    <!-- الطبيب 1 -->
+    <div class="doctor">
+        <img src="doc2.png" alt="Dr Ahmed">
+        <div class="doctor-info">
+            <div class="doctor-name">Dr Ahmed</div>
+            <div class="doctor-place">📍 Souk balli </div>
+            <div class="doctor-time">🕒 9:00 - 17:00</div>
+            <div class="doctor-phone">
+                📞 <a href="tel:05563860496">05563860496</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- الطبيب 2 -->
+    <div class="doctor">
+        <img src="doc1.png" alt="Dr Selma">
+        <div class="doctor-info">
+            <div class="doctor-name">Dr Selma</div>
+            <div class="doctor-place">📍 boulevard jakob</div>
+            <div class="doctor-time">🕒 9:00 - 17:00</div>
+            <div class="doctor-phone">
+                📞 <a href="tel:06749750388">06749750388</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- الطبيب 3 -->
+    <div class="doctor">
+        <img src="doc3.png" alt="Dr Saleh">
+        <div class="doctor-info">
+            <div class="doctor-name">Dr Saleh BOUKHOUDJA</div>
+            <div class="doctor-place">📍 Cité police</div>
+            <div class="doctor-time">🕒 08:00 - 16:00</div>
+            <div class="doctor-phone">
+                📞 <a href="tel:0764288689">0764288689</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- الطبيب 4 -->
+    <div class="doctor">
+        <img src="doc4.jpg" alt="Dr Khalas MAHRI">
+        <div class="doctor-info">
+            <div class="doctor-name">Dr Khalas MAHRI</div>
+            <div class="doctor-place">📍 Cité abd lhamid</div>
+            <div class="doctor-time">🕒 08:00 - 16:00</div>
+            <div class="doctor-phone">
+                📞 <a href="tel:05509865437">05509865437</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+ </div>
+</body>
+</html>
