@@ -10,9 +10,8 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f5f7fa;
-
     direction: ltr;       /* الكتابة من اليسار لليمين */
-    text-align: left;     /* كل النصوص تبدأ من اليسار */
+    text-align: left;     
 }
 
 /* الهيدر */
@@ -20,13 +19,14 @@ body {
     padding: 20px;
     font-size: 20px;
     display: flex;
-    justify-content: space-between; /* الاسم على اليسار والبحث على اليمين */
+    justify-content: space-between; 
     align-items: center;
-    #welcome {
-    font-size: 28px;      /* حجم أكبر */
-    font-weight: bold;     /* غامق */
-    color: #333;           /* لون واضح */
 }
+
+#welcome {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
 }
 
 .search-bar {
@@ -46,15 +46,14 @@ body {
     color: white;
     overflow: hidden;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-
-    /* إضافة حركة انتقالية */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blue-card:hover {
-    transform: translateY(-5px) scale(1.02); /* تتحرك للأعلى وتكبر قليلًا */
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
 }
+
 .blue-card img {
     position: absolute;
     right: 10px;
@@ -62,37 +61,31 @@ body {
     height: 120px;
 }
 
-/* النص */
-.blue-text {
-    width: 60%;
-}
-
-
+.blue-text { width: 60%; }
 
 /* عنوان */
 .center-title {
-    text-align: left;      /* النص على اليسار */
+    text-align: left;
     margin-top: 10px;
-    margin-left: 15px;     /* المسافة من الحافة */
-    font-weight: bold;      /* غامق */
-    font-size: 28px;        /* حجم أكبر */
-    color: #333;            /* لون واضح */
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 28px;
+    color: #333;
 }
 
 /* التخصصات */
 .specialties {
-    display: flex;           /* يحافظ على الترتيب الأفقي */
-    overflow-x: auto;        /* تمرير أفقي إذا زاد المحتوى */
+    display: flex;
+    overflow-x: auto;
     padding: 0;
     margin: 0;
-    gap: 4px;                /* المسافة بين الدوائر */
+    gap: 4px;
 }
 
 .specialties a {
-    text-decoration: none;  /* إزالة التسطير */
-    color: inherit;          /* استخدم لون النص الأصلي */
+    text-decoration: none;
+    color: inherit;
 }
-
 
 .spec {
     flex: 0 0 auto;
@@ -105,24 +98,22 @@ body {
     height: 100px;
     border-radius: 50%;
     display: block;
-    transition: transform 0.3s; /* حركة سلسة */
+    transition: transform 0.3s;
 }
 
 .spec img:hover {
-    transform: scale(1.1) rotate(5deg); /* تكبير و تدوير خفيف عند المرور */
+    transform: scale(1.1) rotate(5deg);
 }
+
 /* بطاقة الأطباء */
 .doctors-card {
     background: white;
     margin: 15px;
     padding: 15px;
     border-radius: 20px;
-
-    /* ظل خفيف */
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
-/* الحاوية الرئيسية لكل طبيب */
 .doctor {
     display: flex;
     justify-content: space-between;
@@ -132,45 +123,38 @@ body {
     padding: 10px 15px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-
-    /* حركة انتقالية */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .doctor:hover {
-    transform: translateY(-5px) scale(1.01); /* تتحرك للأعلى وتكبر قليلًا */
+    transform: translateY(-5px) scale(1.01);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* صورة الطبيب */
 .doctor img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 10px; /* مسافة بين الصورة والمعلومات */
+    margin-left: 10px;
 }
 
-/* معلومات الطبيب (اسم + توقيت) */
 .doctor-info {
     display: flex;
     flex-direction: column;
-    flex: 1; /* لتأخذ كل المساحة الممكنة بين الصورة وOuvrir */
+    flex: 1;
 }
 
-/* اسم الطبيب */
 .doctor-name {
     font-weight: bold;
     font-size: 16px;
     color: #333;
 }
 
-/* توقيت العمل */
 .doctor-time {
     font-size: 14px;
     color: #777;
 }
 
-/* بطاقة Ouvrir */
 .doctor-action {
     padding: 5px 12px;
     border-radius: 12px;
@@ -180,20 +164,8 @@ body {
     font-size: 14px;
 }
 
-.ouvrir.green {
-    background-color: #3d87a6; /* أخضر */
-}
-
-.ouvrir.red {
-    background-color: #3d87a6; /* أحمر */
-}
-
-.doctor img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-left: 10px;
-}
+.ouvrir.green { background-color: #3d87a6; }
+.ouvrir.red { background-color: #3d87a6; }
 
 /* الشريط السفلي */
 .bottom-nav {
@@ -206,6 +178,103 @@ body {
     padding: 10px 0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
+
+/* الرسائل */
+#messagesCard {
+    position: fixed;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background: #3d87a6;
+    color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    display: none;
+    z-index: 1000;
+}
+
+/* الإعدادات */
+#settingsModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;               /* نصف الشاشة */
+    max-width: 400px;
+    background: rgba(61, 135, 166, 0.9); /* أزرق مخضر شبه شفاف */
+    border-radius: 20px;       /* حواف ناعمة */
+    padding: 20px;
+    display: none;             /* مخفية افتراضياً */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    color: white;
+    z-index: 3000;
+    text-align: right;
+    font-family: Arial, sans-serif;
+}
+
+.settingsContent h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.settingItem {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.settingItem label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.settingItem select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+}
+
+.settingItem button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    background: #fff;
+    color: #3d87a6;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.closeBtn {
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+/* الحساب الشخصي */
+#profileSidebar {
+    position: fixed;
+    top: 0;
+    right: -50%; /* يظهر من خارج الشاشة */
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    z-index: 2000; /* أعلى من الشريط السفلي */
+    overflow-y: auto;
+}
+#profileSidebar div { text-align:center; padding:20px; }
+#profileSidebar img { width:100px; height:100px; border-radius:50%; margin-bottom:10px; }
+#profileSidebar button { margin-top:10px; padding:5px 10px; cursor:pointer; }
 </style>
 
 </head>
@@ -229,46 +298,42 @@ body {
 
 <!-- التخصصات -->
 <div class="specialties">
-    
     <a href="OPHTA.html?name=ophta" class="spec">
         <img src="OPHTA.png" alt="OPHTA">
         <div>OPHTA</div>
-     </a>
+    </a>
 
+    <a href="specialty.html?type=gyneco" class="spec">
+        <img src="GYNECOLOGUE.png" alt="GYNECOLOGUE">
+        <div>GYNECOLOGUE</div>
+    </a>
 
-<a href="specialty.html?type=gyneco" class="spec">
-    <img src="GYNECOLOGUE.png" alt="GYNECOLOGUE">
-    <div>GYNECOLOGUE</div>
-</a>
+    <a href="specialty.html?type=dent" class="spec">
+        <img src="DENTISTE.png" alt="DENTISTE">
+        <div>DENTISTE</div>
+    </a>
 
-<a href="specialty.html?type=dent" class="spec">
-    <img src="DENTISTE.png" alt="DENTISTE">
-    <div>DENTISTE</div>
-</a>
+    <a href="specialty.html?type=gyneraliste" class="spec">
+        <img src="GYNERALISTE.png" alt="GYNERALISTE">
+        <div>GYNERALISTE</div>
+    </a>
 
-<a href="specialty.html?type=ortho" class="spec">
-    <img src="ORTHO.png" alt="ORTHO">
-    <div>ORTHO</div>
-</a>
+    <a href="specialty.html?type=orl" class="spec">
+        <img src="ORL.png" alt="ORL">
+        <div>ORL</div>
+    </a>
 
-<a href="specialty.html?type=orl" class="spec">
-    <img src="ORL.png" alt="ORL">
-    <div>ORL</div>
-</a>
-
-<a href="specialty.html?type=pneumo" class="spec">
-    <img src="PNEUMOLOGUE.png" alt="PNEUMOLOGUE">
-    <div>PNEUMOLOGUE</div>
-</a>
- </div>   
-
+    <a href="specialty.html?type=pneumo" class="spec">
+        <img src="PNEUMOLOGUE.png" alt="PNEUMOLOGUE">
+        <div>PNEUMOLOGUE</div>
+    </a>
+</div>
 
 <!-- بطاقة الأطباء -->
 <div class="doctors-card">
     <h3>Top Doctors</h3>
-
     <div class="doctor">
-         <img src="doc1.png" alt="Dr Ahmed"> <!-- صورة الطبيب -->
+        <img src="doc1.png" alt="Dr Ahmed">
         <div class="doctor-info">
             <div class="doctor-name">Dr Ahmed</div>
             <div class="doctor-time">9:00 - 17:00</div>
@@ -277,7 +342,7 @@ body {
     </div>
 
     <div class="doctor">
-         <img src="doc2.png" alt="Dr Ahmed"> <!-- صورة الطبيب -->
+        <img src="doc2.png" alt="Dr Sara">
         <div class="doctor-info">
             <div class="doctor-name">Dr Sara</div>
             <div class="doctor-time">10:00 - 16:00</div>
@@ -286,45 +351,197 @@ body {
     </div>
 
     <div class="doctor">
-         <img src="doc3.png" alt="Dr Ahmed"> <!-- صورة الطبيب -->
+        <img src="doc3.png" alt="Dr Ali">
         <div class="doctor-info">
             <div class="doctor-name">Dr Ali</div>
             <div class="doctor-time">8:00 - 14:00</div>
         </div>
         <div class="doctor-action ouvrir green">Ouvrir</div>
     </div>
-
 </div>
 
+<!-- بطاقة الرسائل -->
+<div id="messagesCard">
+    <h4>الرسائل</h4>
+    <textarea placeholder="اكتب رسالتك هنا..." style="width:100%; height:60px; border-radius:6px; border:none; padding:5px;"></textarea>
+    <button style="margin-top:5px; padding:5px 10px; border:none; border-radius:6px; background:#fff; color:#3d87a6; cursor:pointer;">إرسال</button>
+</div>
+
+<!-- بطاقة الإعدادات -->
+<!-- بطاقة الإعدادات الكبيرة -->
+<div id="settingsModal">
+    <div class="settingsContent">
+        <h2>إعدادات التطبيق</h2>
+
+        <!-- تغيير اللون -->
+        <div class="settingItem">
+            <label>الوضع:</label>
+            <select id="themeSelectModal">
+                <option value="light">فاتح</option>
+                <option value="dark">غامق</option>
+            </select>
+        </div>
+
+        <!-- تغيير اللغة -->
+        <div class="settingItem">
+            <label>اللغة:</label>
+            <select id="languageSelectModal">
+                <option value="ar">العربية</option>
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+
+        <!-- غلق الحساب -->
+        <div class="settingItem">
+            <button id="logoutBtn">تسجيل الخروج</button>
+        </div>
+
+        <!-- زر إغلاق البطاقة -->
+        <div style="text-align:center; margin-top:10px;">
+            <button onclick="closeSettingsModal()" class="closeBtn">✖ إغلاق</button>
+        </div>
+    </div>
+</div>
+
+<!-- الحساب الشخصي -->
+<!-- الحساب الشخصي -->
+<div id="profileSidebar">
+    <div style="text-align:center; padding: 20px;">
+        <!-- زر إغلاق -->
+        <button onclick="closeProfile()" style="float:right; margin-bottom:10px;">✖</button>
+
+        <!-- أيقونة شخص رمادية -->
+        <div style="
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            background:#ccc;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:50px;
+            color:#fff;
+            margin:0 auto 10px auto;
+        ">
+            👤
+        </div>
+
+        <h3 style="margin:5px 0; color:#555;" id="profileName">اسم المستخدم</h3>
+        <p style="margin:2px 0; color:#999;" id="profileEmail">user@example.com</p>
+        <hr>
+        <p style="margin:5px 0;" id="loginDate">تاريخ تسجيل الدخول: --/--/----</p>
+    </div>
+</div>
 <!-- الشريط السفلي -->
 <div class="bottom-nav">
-    <div>🏠</div>
-    <div>💬</div>
-    <div>⚙️</div>
-    <div>👤</div>
+
+    <div onclick="window.location.href='index.html'" style="text-align:center; cursor:pointer;">
+        <div style="width:28px; height:28px; border-radius:5px; background:#3d87a6; display:flex; justify-content:center; align-items:center;">
+            <div style="width:12px; height:12px; background:#fff;"></div>
+        </div>
+        <span style="font-size:12px; color:#555;">الرئيسية</span>
+    </div>
+
+    <div onclick="toggleMessages()" style="text-align:center; cursor:pointer;">
+        <div style="width:28px; height:28px; border-radius:5px; background:#3d87a6; display:flex; justify-content:center; align-items:center;">
+            <div style="width:16px; height:10px; border:2px solid #fff; border-radius:2px; position:relative;">
+                <div style="position:absolute; width:2px; height:4px; background:#fff; top:-2px; left:7px;"></div>
+            </div>
+        </div>
+        <span style="font-size:12px; color:#555;">الرسائل</span>
+    </div>
+
+   <div onclick="openSettingsModal()" style="text-align:center; cursor:pointer;">
+        <div style="width:28px; height:28px; border-radius:5px; background:#3d87a6; display:flex; justify-content:center; align-items:center; position:relative;">
+            <div style="width:10px; height:10px; border:2px solid #fff; border-radius:50%;"></div>
+            <div style="position:absolute; width:2px; height:12px; background:#fff; transform:rotate(45deg);"></div>
+            <div style="position:absolute; width:2px; height:12px; background:#fff; transform:rotate(-45deg);"></div>
+        </div>
+        <span style="font-size:12px; color:#555;">الإعدادات</span>
+    </div>
+
+    <div onclick="openProfile()" style="text-align:center; cursor:pointer;">
+        <div style="width:28px; height:28px; border-radius:50%; background:#3d87a6; display:flex; justify-content:center; align-items:center;">
+            <div style="width:12px; height:12px; border-radius:50%; background:#fff;"></div>
+        </div>
+        <span style="font-size:12px; color:#555;">الحساب</span>
+    </div>
+
 </div>
 
 <script>
-  // جلب البريد الإلكتروني من الرابط
-  const params = new URLSearchParams(window.location.search);
-  const email = params.get("name"); // البريد الإلكتروني المرسل من login.html
+// البريد الإلكتروني للترحيب
+// جلب البريد الإلكتروني من الرابط
+const params = new URLSearchParams(window.location.search);
+const email = params.get("name") || "user@example.com";
+const shortName = email.substring(0,5);
 
-  // استخراج أول خمس أحرف
-  let shortName = "";
-  if(email){
-      shortName = email.substring(0, 5); // أول 5 أحرف
-      const welcomeEl = document.getElementById("welcome");
-      if(welcomeEl){
-          welcomeEl.innerText = "Hi " + shortName;
-      }
-  }
-</script>
-<script>
-function openSpecialty(specialty) {
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get("name") || '';
-    window.location.href = specialty + ".html?name=" + name;
+// الترحيب في الهيدر
+document.getElementById("welcome").innerText = "Hi " + shortName;
+
+// الرسائل
+const messagesCard = document.getElementById('messagesCard');
+function toggleMessages() {
+    messagesCard.style.display = messagesCard.style.display === 'block' ? 'none' : 'block';
 }
+
+// الإعدادات
+const settingsModal = document.getElementById('settingsModal');
+
+// فتح البطاقة عند الضغط على أيقونة الإعدادات
+function openSettingsModal() {
+    settingsModal.style.display = 'block';
+}
+
+// غلق البطاقة
+function closeSettingsModal() {
+    settingsModal.style.display = 'none';
+}
+
+// تغيير الوضع (فاتح / غامق)
+document.getElementById('themeSelectModal').addEventListener('change', (e)=>{
+    if(e.target.value === 'dark'){
+        document.body.style.backgroundColor = '#1e1e1e';
+        document.body.style.color = '#eee';
+    } else {
+        document.body.style.backgroundColor = '';
+        document.body.style.color = '';
+    }
+});
+
+// تغيير اللغة
+document.getElementById('languageSelectModal').addEventListener('change', (e)=>{
+    console.log("اللغة المختارة:", e.target.value);
+});
+
+// غلق الحساب (مثال: إعادة التوجيه لصفحة تسجيل الدخول)
+document.getElementById('logoutBtn').addEventListener('click', ()=>{
+    alert("تم تسجيل الخروج!");
+    window.location.href = "login.html";
+});
+
+// الحساب الشخصي
+const profileSidebar = document.getElementById('profileSidebar');
+
+function openProfile() {
+    profileSidebar.style.right = "0"; // يظهر الشريط
+}
+
+function closeProfile() {
+    profileSidebar.style.right = "-50%"; // يخفي الشريط
+}
+// عرض بيانات الحساب الشخصي
+document.getElementById("profileName").innerText = shortName;
+document.getElementById("profileEmail").innerText = email;
+
+// تاريخ تسجيل الدخول الفعلي
+const now = new Date();
+const loginDate = now.getFullYear() + "/" + (now.getMonth()+1).toString().padStart(2,'0') + "/" + now.getDate().toString().padStart(2,'0') + 
+                  " " + now.getHours().toString().padStart(2,'0') + ":" + now.getMinutes().toString().padStart(2,'0');
+
+document.getElementById("loginDate").innerText = "تاريخ تسجيل الدخول: " + loginDate;
 </script>
+
 </body>
 </html>

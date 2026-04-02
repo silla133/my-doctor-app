@@ -121,10 +121,16 @@
 
 
 <link rel="manifest" href="manifest.json">
-   <link rel="icon" href="logo.png">
+   <link rel="icon" href="Logo.png">
 </head>
 
 <body>
+
+
+
+   
+</body>
+
 
 <div class="splash-container">
         <div class="heart-wrapper">
@@ -149,6 +155,25 @@
 </style>
 
 <script>
+
+
+
+
+
+    const profileSidebar = document.getElementById('profileSidebar');
+
+    function openProfile() {
+        profileSidebar.style.left = "0";
+    }
+
+    function closeProfile() {
+        profileSidebar.style.left = "-50%";
+    }
+
+
+
+
+
     // عند الضغط على أي مكان، الانتقال للصفحة الرئيسية
     document.body.addEventListener("click", function () {
         window.location.href = "login.html";

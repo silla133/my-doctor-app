@@ -12,12 +12,13 @@ body {
     text-align: left;
 }
 
-/* الهيدر */
+/* عنوان التخصص */
 .header {
-    padding: 37px;
-    font-size: 37px;
+    padding: 20px;
+    font-size: 28px;
     font-weight: bold;
     color: #031022;
+    text-align: center;
 }
 
 /* شريط البحث */
@@ -89,203 +90,73 @@ body {
 </head>
 <body>
 
-<div class="header" id="headerTitle">Specialty</div>
+<!-- عنوان التخصص -->
+<div class="header" id="headerTitle">التخصص</div>
 
 <!-- شريط البحث -->
 <div class="search-bar">
-    <input type="text" placeholder="Search for doctor..." id="searchInput">
+    <input type="text" placeholder="ابحث عن طبيب..." id="searchInput">
 </div>
 
-<div class="doctors-list" id="doctorsList">
-    <!-- سيتم إنشاء بطاقات الأطباء بواسطة جافاسكربت -->
-</div>
+<!-- قائمة الأطباء -->
+<div class="doctors-list" id="doctorsList"></div>
 
 <script>
 /* ===== بيانات الأطباء ===== */
 const data = {
    gyneco: [
-    { 
-        name: "Dr Nadia MAGHREBI", 
-        place: "Quartier des Lys", 
-        time: "9:00 - 17:00", 
-        phone: "05598644800", 
-        img: "doc6.png" 
-    },
-{ 
-        name: "Dr Fadia FASSILI", 
-        place: "Bellevue Centre", 
-        time: "9:00 - 17:00", 
-        phone: "0556428557", 
-        img: "doc8.png" 
-    },
-
-
-{ 
-        name: "Dr Houssine BENFADHIL", 
-        place: "Les Hauts de la Ville", 
-        time: "9:00 - 17:00", 
-        phone: "0558647898", 
-        img: "doc5.png" 
-    },
-
-    { 
-        name: "Dr Siradje eddine MAFIL ",        // اسم الطبيب الجديد
-        place: "Boulevard CIRTA ", // مكان عمل الطبيب الجديد
-        time: "10:00 - 17:00",    // وقت العمل
-        phone: "0671234567",      // رقم الهاتف
-        img: "doc7.png"           // صورة الطبيب
-    }
-],
-
-    dent: [
-        { name: "Dr Karim",
-         place: "Quartier CHERGUI", 
-         time: "10:00 - 18:00", 
-         phone: "06676479744",
-          img: "doc9.png" },
-
-          { name: "Dr Soraya" ,
-         place: "Centre ville", 
-         time: "10:00 - 18:00", 
-         phone: "06607687546",
-          img: "doc8.png" },
-
-            { name: "Dr Ihssan MOUFDI ",
-         place: "BOULVARD SOURADI ", 
-         time: "10:00 - 18:00", 
-         phone: "06608743009",
-          img: "doc9.png" },
-
-           { name: "Dr ABLA GHARIDI",
-         place: "Centre ville", 
-         time: "10:00 - 18:00", 
-         phone: "0669685735",
-          img: "doc10.png" },
-
-           { name: "Dr Halima DJARIDI",
-         place: "Centre ville", 
-         time: "10:00 - 18:00", 
-         phone: "0660873038",
-          img: "doc12.png" },
-
-          
-    ],
-    ortho: [
-        { name: "Dr Samir KHODJA ",
-         place: "Clinique El Amal", 
-         time: "8:00 - 15:00",
-          phone: "0770000000", 
-          img: "doc11.png" }, 
-
- { name: "Dr Salwa MOUHAMEDI",
-         place: "Palais Royal", 
-         time: "8:00 - 18:00",
-          phone: "07735473938", 
-          img: "doc12.png" }, 
-
-           { name: "Dr Ghadir KAZI",
-         place: "Le Grand Boulevard", 
-         time: "8:00 - 15:00",
-          phone: "0766478760", 
-          img: "doc14.png" }, 
-           
-  { name: "Dr wail KASSEM ",
-         place: "Côté Jardin", 
-         time: "8:00 - 15:00",
-          phone: "0765357870", 
-          img: "doc13.png" }
-
-    ],
-    orl: [
-        { name: "Dr Lina MEZIANE",
-         place: "Hopital",
-          time: "9:00 - 16:00", 
-          phone: "06576436788", 
-          img: "doc16.png" },
-
-
- { name: "Dr Ghadir KAZI",
-         place: "Le Grand Boulevard", 
-         time: "8:00 - 15:00",
-          phone: "0766478760", 
-          img: "doc18.png" }, 
-
-{ name: "Dr Hadil MAROUANI ",
-         place: "Les Oliviers", 
-         time: "8:00 - 16:00",
-          phone: "0654388000", 
-          img: "doc15.png" }, 
-
-          { name: "Dr Mouhaemd HALIMI",
-         place: "Quartier des Pins", 
-         time: "8:00 - 18:00",
-          phone: "0700653760", 
-          img: "doc17.png" }, 
-
-          { name: "Dr Maroua WAIL ",
-         place: "La Colline Verte", 
-         time: "8:00 - 15:00",
-          phone: "07008705670", 
-          img: "doc16.png" }, 
-
-          { name: "Dr Dada KIRRA ",
-         place: "Le Grand Boulevard", 
-         time: "8:00 - 15:00",
-          phone: "0762140060", 
-          img: "doc18.png" }
-    ],
-    pneumo: [
-        { name: "Dr Adel", 
-        place: "Clinique privée",
-         time: "8:00 - 14:00", 
-         phone: "0540000000", 
-         img: "doc19.png" },
-
-
- { name: "Dr Sami MESSALTI ", 
-        place: "Quartier des Lumières",
-         time: "8:00 - 18:00", 
-         phone: "0565219000", 
-         img: "doc21.png" },
-
-          { name: "Dr Karim KASSMI ", 
-        place: "Horizon Bleu",
-         time: "8:00 - 19:00", 
-         phone: "054065489000", 
-         img: "doc23.png" },
-
- { name: "Dr Adel SAIDI ", 
-        place: "Cité de l'Avenir",
-         time: "8:00 - 14:00", 
-         phone: "05760763256", 
-         img: "doc25.png" },
-
-          { name: "Dr Houssin MOLAY ", 
-        place: "Quartier du Port",
-         time: "8:00 - 18:00", 
-         phone: "0873478980", 
-         img: "doc27.png" },
-
-          { name: "Dr Hania MALLI ", 
-        place: "Espace Liberté",
-         time: "8:00 - 14:00", 
-         phone: "0984321000", 
-         img: "doc22.png" },
-
-          { name: "Dr Khaira KHALILI", 
-        place: "Clinique privée",
-         time: "8:00 - 16:00", 
-         phone: "03789768700", 
-         img: "doc24.png" }
-    ]
+    { name: "Dr Nadia MAGHREBI", place: "Quartier des Lys", time: "9:00 - 17:00", phone: "05598644800", img: "doc6.png" },
+    { name: "Dr Fadia FASSILI", place: "Bellevue Centre", time: "9:00 - 17:00", phone: "0556428557", img: "doc8.png" },
+    { name: "Dr Houssine BENFADHIL", place: "Les Hauts de la Ville", time: "9:00 - 17:00", phone: "0558647898", img: "doc5.png" },
+    { name: "Dr Siradje eddine MAFIL", place: "Boulevard CIRTA", time: "10:00 - 17:00", phone: "0671234567", img: "doc7.png" }
+   ],
+   dent: [
+    { name: "Dr Karim", place: "Quartier CHERGUI", time: "10:00 - 18:00", phone: "06676479744", img: "doc9.png" },
+    { name: "Dr Soraya", place: "Centre ville", time: "10:00 - 18:00", phone: "06607687546", img: "doc8.png" },
+    { name: "Dr Ihssan MOUFDI", place: "BOULVARD SOURADI", time: "10:00 - 18:00", phone: "06608743009", img: "doc9.png" },
+    { name: "Dr ABLA GHARIDI", place: "Centre ville", time: "10:00 - 18:00", phone: "0669685735", img: "doc10.png" },
+    { name: "Dr Halima DJARIDI", place: "Centre ville", time: "10:00 - 18:00", phone: "0660873038", img: "doc12.png" }
+   ],
+   gyneraliste: [
+    { name: "Dr Samir KHODJA", place: "Clinique El Amal", time: "8:00 - 15:00", phone: "0770000000", img: "doc11.png" },
+    { name: "Dr Salwa MOUHAMEDI", place: "Palais Royal", time: "8:00 - 18:00", phone: "07735473938", img: "doc12.png" },
+    { name: "Dr Ghadir KAZI", place: "Le Grand Boulevard", time: "8:00 - 15:00", phone: "0766478760", img: "doc14.png" },
+    { name: "Dr Wail KASSEM", place: "Côté Jardin", time: "8:00 - 15:00", phone: "0765357870", img: "doc13.png" }
+   ],
+   orl: [
+    { name: "Dr Lina MEZIANE", place: "Hopital", time: "9:00 - 16:00", phone: "06576436788", img: "doc16.png" },
+    { name: "Dr Ghadir KAZI", place: "Le Grand Boulevard", time: "8:00 - 15:00", phone: "0766478760", img: "doc18.png" },
+    { name: "Dr Hadil MAROUANI", place: "Les Oliviers", time: "8:00 - 16:00", phone: "0654388000", img: "doc15.png" },
+    { name: "Dr Mouhaemd HALIMI", place: "Quartier des Pins", time: "8:00 - 18:00", phone: "0700653760", img: "doc17.png" },
+    { name: "Dr Maroua WAIL", place: "La Colline Verte", time: "8:00 - 15:00", phone: "07008705670", img: "doc16.png" },
+    { name: "Dr Dada KIRRA", place: "Le Grand Boulevard", time: "8:00 - 15:00", phone: "0762140060", img: "doc18.png" }
+   ],
+   pneumo: [
+    { name: "Dr Adel", place: "Clinique privée", time: "8:00 - 14:00", phone: "0540000000", img: "doc19.png" },
+    { name: "Dr Sami MESSALTI", place: "Quartier des Lumières", time: "8:00 - 18:00", phone: "0565219000", img: "doc21.png" },
+    { name: "Dr Karim KASSMI", place: "Horizon Bleu", time: "8:00 - 19:00", phone: "054065489000", img: "doc23.png" },
+    { name: "Dr Adel SAIDI", place: "Cité de l'Avenir", time: "8:00 - 14:00", phone: "05760763256", img: "doc25.png" },
+    { name: "Dr Houssin MOLAY", place: "Quartier du Port", time: "8:00 - 18:00", phone: "0873478980", img: "doc27.png" },
+    { name: "Dr Hania MALLI", place: "Espace Liberté", time: "8:00 - 14:00", phone: "0984321000", img: "doc22.png" },
+    { name: "Dr Khaira KHALILI", place: "Clinique privée", time: "8:00 - 16:00", phone: "03789768700", img: "doc24.png" }
+   ]
 };
 
 /* ===== تحديد نوع التخصص من الرابط ===== */
 const params = new URLSearchParams(window.location.search);
-const type = params.get("type") || "gyneco"; // افتراضي gyneco
+const type = params.get("type") || "gyneco";
 const doctors = data[type] || [];
 
-document.getElementById("headerTitle").innerText = type.toUpperCase();
+/* تحديد الاسم العربي للتخصص */
+let displayName = "";
+if(type === "gyneco") displayName = "GYNECOLOGUE أمراض النساء";
+else if(type === "dent") displayName = "DENTISTE طب الأسنان";
+else if(type === "gyneraliste") displayName = "GYNERALISTE طبيب عام ";
+else if(type === "orl") displayName = "ORL الأنف والأذن والحنجرة";
+else if(type === "pneumo") displayName = "PNEUMOLOGUE طب الرئة";
+
+/* عرض الاسم */
+document.getElementById("headerTitle").innerText = displayName;
 
 /* ===== دالة عرض الأطباء ===== */
 function displayDoctors(filter="") {
